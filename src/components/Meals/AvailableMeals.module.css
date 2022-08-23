@@ -8,7 +8,12 @@
 .MealsLoading {
   text-align: center;
   color: white;
-} 
+}
+
+.MealsError {
+  text-align: center;
+  color: red;
+}
 
 .meals ul {
   list-style: none;
