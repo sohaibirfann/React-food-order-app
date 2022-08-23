@@ -5,7 +5,7 @@ import styles from "./AvailableMeals.module.css";
 import MealItem from "./MealItem/MealItem";
 
 const AvailableMeals = () => {
-  const [] = useState();
+  const [meals, setMeals] = useState([]);
 
   useEffect(() => {
     const fetchMeals = async () => {
@@ -22,12 +22,14 @@ const AvailableMeals = () => {
           price: responseData[key].price,
         });
       }
+
+      setMeals(loadedMeals)
     };
 
     fetchMeals();
   }, []);
 
-  const mealsList = DUMMY_MEALS.map((meal) => (
+  const mealsList = meals.map((meal) => (
     <MealItem
       id={meal.id}
       key={meal.id}
